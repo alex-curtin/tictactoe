@@ -4,6 +4,7 @@ import Board from './board';
 import ResetButton from './reset-button';
 import { computerMove } from '../lib/computer';
 import { WIN_CONDITIONS, COMPUTER, PLAYER, X, O } from '../constants';
+import { useLocalStorage } from '../hooks';
 
 const EMPTY_BOARD = Array.from({ length: 9 }, (_, i) => null);
 
@@ -19,6 +20,9 @@ const App = () => {
   const [turn, setTurn] = useState(PLAYER);
   const [turnCount, setTurnCount] = useState(0);
   const [winningRow, setWinningRow] = useState(null);
+  const [winCount, setWinCount] = useLocalStorage('wins');
+  const [lossCount, setLossCount] = useLocalStorage('losses');
+  const [tieCount, setTieCount] = useLocalStorage('ties');
 
   const resetGame = () => {
     setBoard(EMPTY_BOARD);
@@ -50,11 +54,19 @@ const App = () => {
     const win = checkForWinner(board);
     if (win) {
       const { winner, row } = win;
+      console.log(winner);
       setTurn(null);
       setWinningRow(row);
+      if (winner === X) {
+        setWinCount(winCount + 1);
+      } else {
+        setLossCount(lossCount + 1);
+      }
     } else {
       if (turnCount === 0) {
         setTurn(PLAYER);
+      } else if (turnCount === 9) {
+        setTieCount(tieCount + 1);
       } else {
         setTurn(turn === PLAYER ? COMPUTER : PLAYER);
       }
