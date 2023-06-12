@@ -1,0 +1,16 @@
+.square {
+  border: 3px solid #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+  cursor: pointer;
+}
+
+.square.disabled {
+  cursor: default;
+}
+
+.square.win {
+  color: green;
+}

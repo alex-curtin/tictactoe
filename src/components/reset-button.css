@@ -1,0 +1,9 @@
+.reset {
+  border: 2px solid black;
+  border-radius: 2px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  background: white;
+  cursor: pointer;
+}
