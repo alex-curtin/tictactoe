@@ -2,11 +2,7 @@ import { useLocalStorage } from '../hooks';
 
 import './scoreboard.css';
 
-const ScoreBoard = () => {
-  const [winCount] = useLocalStorage('wins');
-  const [lossCount] = useLocalStorage('losses');
-  const [tieCount] = useLocalStorage('ties');
-
+const ScoreBoard = ({ winCount, lossCount, tieCount }) => {
   return (
     <div className="scoreboard">
       <div className="score-container">

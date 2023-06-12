@@ -2,9 +2,11 @@ import './reset-button.css';
 
 const ResetButton = ({ resetGame }) => {
   return (
-    <button className="reset" onClick={resetGame}>
-      reset game
-    </button>
+    <div className="reset-btn-container">
+      <button className="reset" onClick={resetGame}>
+        reset game
+      </button>
+    </div>
   );
 };
 
