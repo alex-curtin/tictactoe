@@ -1,0 +1,16 @@
+.scoreboard {
+  font-family: sans-serif;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0.5rem 1rem;
+  border: 2px solid black;
+}
+
+.score-container {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-weight: bold;
+}

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import Board from './board';
 import ResetButton from './reset-button';
+import ScoreBoard from './scoreboard';
 import { computerMove } from '../lib/computer';
 import { WIN_CONDITIONS, COMPUTER, PLAYER, X, O } from '../constants';
 import { useLocalStorage } from '../hooks';
@@ -77,6 +78,7 @@ const App = () => {
     <div>
       <ResetButton resetGame={resetGame} />
       <Board board={board} clickSquare={clickSquare} winningRow={winningRow} />
+      <ScoreBoard />
     </div>
   );
 };
